@@ -9,8 +9,16 @@ Example:
 assert find('apple') == 0
 assert find('fish') == 5
 '''
-def find(needle):
-    pass
+
+def find(louise):
+    filename = 'task01.txt'
+    file = open(filename, 'r')
+    count = -1
+    for i in file:
+        count = count + 1
+        if louise in i:
+
+            return count
 
 
 if __name__ == "__main__":
