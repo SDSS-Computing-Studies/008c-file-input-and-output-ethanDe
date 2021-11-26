@@ -10,16 +10,14 @@ assert find('apple') == 0
 assert find('fish') == 5
 '''
 
-def find(louise):
+def find(inpt):
     filename = 'task01.txt'
     file = open(filename, 'r')
-    count = -1
+    count = (-1)
     for i in file:
         count = count + 1
-        if louise in i:
-
+        if inpt in i:
             return count
-
 
 if __name__ == "__main__":
     assert find('apple') == 0
