@@ -13,25 +13,26 @@ Apple Inc.
 Enter stock symbol: YANG
 No matches"""
 
-while True:
-    x = input("Enter a stock symbol: ")
 
-    def find(stock):
-        filename = 'task02.csv'
-        file = open(filename, 'r')
-        alist = []
-        count = 0
-        for i in file:
-            if stock in i:
-                count = count + 1
-                test = i.strip()
-                lineData = test.split(",")
-                alist.append(lineData[1])
-        if len(alist) > 1:
-            print(f"There are {len(alist)} stocks with that symbol")
-        if len(alist) == 1:
-            print(alist)
-        elif len(alist) == 0:
-            print("No matches")
+def find(stock):
+    filename = 'task02.csv'
+    file = open(filename, 'r')
+    alist = []
+    count = 0
+    for i in file:
+        if stock in i:
+            count = count + 1
+            test = i.strip()
+            lineData = test.split(",")
+            
+            alist.append(lineData[1])
+    
+    if len(alist) > 1:
+        print(f"There are {len(alist)} stocks with that symbol")
+    elif len(alist) == 1:
+        print(alist)
+    elif len(alist) == 0:
+        print("No matches")
 
-    find(x)
+x = input("Enter a stock symbol: ")
+find(x)
